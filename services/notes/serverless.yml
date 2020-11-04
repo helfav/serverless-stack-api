@@ -8,6 +8,7 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
+  - serverless-plugin-datadog
 
 custom:
 # Our stage is based on what is passed in when running serverless
@@ -15,6 +16,8 @@ custom:
   stage: ${opt:stage, self:provider.stage}
 # Name of the SST app that's deploying our infrastructure
   sstApp: ${self:custom.stage}-notes-infra
+  datadog:
+    forwarder: arn:aws:lambda:us-east-2:601896425834:function:datadog-ForwarderStack-5CWACLE33E2A-Forwarder-EZZS4LGGKSS2
 
 provider:
   name: aws
