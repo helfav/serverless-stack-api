@@ -8,6 +8,10 @@ plugins:
   - serverless-bundle # Package our functions with Webpack
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
+  - serverless-plugin-datadog
+
+datadog:
+    forwarder: arn:aws:cloudformation:us-west-2:773480964026:stack/datadog-forwarder/a8174420-a2a6-11eb-9b6c-0aca08f5596d
 
 provider:
   name: aws
