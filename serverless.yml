@@ -10,11 +10,15 @@ plugins:
   - serverless-dotenv-plugin # Load .env as environment variables
   - serverless-plugin-datadog
 
-datadog:
-    forwarder: arn:aws:cloudformation:us-west-2:773480964026:stack/datadog-forwarder/a8174420-a2a6-11eb-9b6c-0aca08f5596d
+custom:
+  datadog:
+    forwarder: arn:aws:lambda:us-west-2:773480964026:function:datadog-forwarder-Forwarder-1PRQNYBOMXY9H
 
 provider:
   name: aws
+  tags:
+    env: "prod"
+    version: "v1"
   runtime: nodejs12.x
   stage: prod
   region: us-west-2
