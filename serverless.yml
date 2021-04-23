@@ -17,10 +17,11 @@ custom:
 provider:
   name: aws
   tags:
-    env: "prod"
-    version: "v1"
+    env: dev
+    version: v2
+    service: notes-test
   runtime: nodejs12.x
-  stage: prod
+  stage: dev
   region: us-west-2
 
   # These environment variables are made available to our functions
