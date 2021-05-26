@@ -17,9 +17,9 @@ custom:
 provider:
   name: aws
   tags:
-    env: dev
-    version: v2
-    service: notes-test
+    env: "dev-1"
+    version: "v3"
+    service: "notes-test"
   runtime: nodejs12.x
   stage: dev
   region: us-west-2
