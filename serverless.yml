@@ -12,7 +12,17 @@ plugins:
 
 custom:
   datadog:
-    forwarder: arn:aws:lambda:us-west-2:773480964026:function:datadog-forwarder-Forwarder-1PRQNYBOMXY9H
+    flushMetricsToLogs: true
+    addLayers: true
+    logLevel: "info"
+    enableXrayTracing: false
+    enableDDTracing: true
+    enableAPIGatewayLogs: true
+    forwarderArn: arn:aws:lambda:eu-west-3:601427279990:function:DatadogForwarderHelene
+    enableTags: true
+    injectLogContext: true
+    exclude:
+      - dd-excluded-function
 
 provider:
   name: aws
@@ -22,7 +32,7 @@ provider:
     service: "notes-test"
   runtime: nodejs12.x
   stage: dev
-  region: us-west-2
+  region: eu-west-3
 
   # These environment variables are made available to our functions
   # under process.env.
@@ -42,7 +52,7 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
         - dynamodb:DescribeTable
-      Resource: "arn:aws:dynamodb:us-west-2:*:*"
+      Resource: "arn:aws:dynamodb:eu-west-3:*:*"
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
