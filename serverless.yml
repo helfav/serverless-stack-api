@@ -12,13 +12,15 @@ plugins:
 
 custom:
   datadog:
+    addExtension: true
+    apiKey: fd8634693888d5b17921a90fdccf1748
     flushMetricsToLogs: true
     addLayers: true
     logLevel: "info"
     enableXrayTracing: false
     enableDDTracing: true
     enableAPIGatewayLogs: true
-    forwarderArn: arn:aws:lambda:eu-west-3:601427279990:function:DatadogForwarderHelene
+    # forwarderArn: arn:aws:lambda:eu-west-3:601427279990:function:DatadogForwarderHelene
     enableTags: true
     injectLogContext: true
     exclude:
