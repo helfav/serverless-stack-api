@@ -14,7 +14,7 @@ custom:
   datadog:
     enabled: true
     addExtension: true
-    apiKey: fd8634693888d5b17921a90fdccf1748
+    apiKey: apikey
     enableXrayTracing: true
     # flushMetricsToLogs: true
     # addLayers: true
