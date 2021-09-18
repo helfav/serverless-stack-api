@@ -12,10 +12,10 @@ plugins:
   
 custom:
   datadog:
-    enabled: true
+    # enabled: true
     addExtension: true
     apiKey: ${env:API_KEY}
-    enableXrayTracing: true
+    # enableXrayTracing: true
     # flushMetricsToLogs: true
     # addLayers: true
     # logLevel: "info"
