@@ -32,7 +32,7 @@ provider:
   name: aws
   tags:
     env: "prod"
-    version: "v3"
+    version: "v4"
     service: "notes-test"
   runtime: nodejs12.x
   stage: prod
